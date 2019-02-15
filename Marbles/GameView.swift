@@ -31,7 +31,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     //小球的方向角
     var ballAngle :CGFloat;
     //定时器
-    var timer :NSTimer?;
+    var timer :Timer?;
     //开始按钮
     var startBtn :UIButton;
     //游戏是否开始
@@ -57,16 +57,16 @@ class GameView: UIView ,UIAlertViewDelegate{
         ballAngle = 0;
         blockW = 0;
         blockNum = 0;
-        startBtn = UIButton.init(frame: CGRectMake(0, 0, 100, 50))
-        startBtn.backgroundColor = UIColor.grayColor()
-        startBtn.setTitle("开 始", forState: UIControlState.Normal)
+        startBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 100))
+        startBtn.backgroundColor = UIColor.gray
+        startBtn.setTitle("开 始", for: UIControl.State.normal)
         isStart = false;
         gameNum = 0;
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor();
+        self.backgroundColor = UIColor.white;
         self.addSubview(self.startBtn)
-        startBtn.addTarget(self, action: Selector("startButtonPress:"), forControlEvents: UIControlEvents.TouchUpInside)
-        let panGesture = UIPanGestureRecognizer(target: self, action: Selector("moveBoard:"))
+        startBtn.addTarget(self, action: #selector(GameView.startButtonPress(btn:)), for: .touchUpInside)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(GameView.moveBoard(panGesture:)))
         self.addGestureRecognizer(panGesture)
     }
 
@@ -88,30 +88,30 @@ class GameView: UIView ,UIAlertViewDelegate{
         
         ballX = width/2.0;
         ballY = boardY - CGFloat(radiu);
-        startBtn.hidden = false;
-        self.blockArr = GameMap.getMapArrayByNumber(gameNum)!
-        startBtn.frame = CGRectMake(width/2.0 - startBtn.frame.size.width/2.0, height/2.0-startBtn.frame.size.height/2.0, startBtn.frame.size.width, startBtn.frame.size.height)
+        startBtn.isHidden = false;
+        self.blockArr = GameMap.getMapArrayByNumber(number: NSNumber.init(value: gameNum))!
+        startBtn.frame = CGRect.init(x: width/2.0 - startBtn.frame.size.width/2.0, y: height/2.0-startBtn.frame.size.height/2.0, width: startBtn.frame.size.width, height: startBtn.frame.size.height)
         if ((self.timer) == nil) {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1/60.0, target: self, selector: Selector("reDraw"), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1/60.0, target: self, selector: #selector(GameView.reDraw), userInfo: nil, repeats: true)
         }
     }
     
-    func startButtonPress(btn: UIButton) {
-        btn.hidden = true;
+    @objc func startButtonPress(btn: UIButton) {
+        btn.isHidden = true;
         isStart = true;
         blockNum = 0;
-        for (_,value) in self.blockArr.enumerate(){
-            for (_,value) in value.enumerate(){
-                if (value.isEqualToNumber(1)) {
-                    blockNum++;
+        for (_,value) in self.blockArr.enumerated(){
+            for (_,value) in value.enumerated(){
+                if (value.isEqual(to: 1)) {
+                    blockNum += 1;
                 }
             }
         }
         self.gameStart();
     }
     
-    func moveBoard(panGesture :UIPanGestureRecognizer) {
-        let movePoint = panGesture.translationInView(self)
+    @objc func moveBoard(panGesture :UIPanGestureRecognizer) {
+        let movePoint = panGesture.translation(in: self)
         if (!isStart) {
             ballX = ballX + movePoint.x;
             if (ballX<=boardW/2) {
@@ -126,47 +126,47 @@ class GameView: UIView ,UIAlertViewDelegate{
         }else if(boardX>=width-boardW){
             boardX = width-boardW;
         }
-        panGesture.setTranslation(CGPointZero, inView: self)
+        panGesture.setTranslation(CGPoint.zero, in: self)
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         // 画底面的跳板
-        let board = UIBezierPath(rect: CGRectMake(boardX, boardY, boardW, boardH))
-        UIColor.grayColor().setFill()
+        let board = UIBezierPath(rect: CGRect.init(x: boardX, y: boardY, width: boardW, height: boardH))
+        UIColor.gray.setFill()
         board.fill()
         
         //画小球
-        let ball = UIBezierPath(arcCenter: CGPointMake(ballX, ballY), radius: CGFloat(radiu), startAngle: 0, endAngle: CGFloat(2.0*M_PI), clockwise: true)
-        UIColor.redColor().setFill()
+        let ball = UIBezierPath(arcCenter: CGPoint.init(x: ballX, y: ballY), radius: CGFloat(radiu), startAngle: 0, endAngle: CGFloat(2.0 * Double.pi), clockwise: true)
+        UIColor.red.setFill()
         ball.fill()
         
         //画砖块
         var row = 0;
         var list = 0;
         blockW = width/CGFloat(self.blockArr[0].count)
-        for (_,value) in self.blockArr.enumerate(){
+        for (_,value) in self.blockArr.enumerated(){
             list = 0;
-            for (_,value) in value.enumerate(){
-                if (value.isEqualToNumber(1)) {
-                    let block = UIBezierPath(rect: CGRectMake(CGFloat(list)*blockW, CGFloat(row)*CGFloat(blockH), blockW, CGFloat(blockH)))
-                    UIColor.grayColor().setFill()
-                    UIColor.blackColor().setStroke()
+            for (_,value) in value.enumerated(){
+                if (value.isEqual(to: 1)) {
+                    let block = UIBezierPath(rect: CGRect.init(x: CGFloat(list)*blockW, y: CGFloat(row)*CGFloat(blockH), width: blockW, height: CGFloat(blockH)))
+                    UIColor.gray.setFill()
+                    UIColor.black.setStroke()
                     block.fill()
                     block.stroke()
                 }
-                list++
+                list += 1
             }
-            row++
+            row += 1
         }
     }
     
     func gameStart() {
-        ballAngle = CGFloat(M_PI_4)
+        ballAngle = CGFloat(Double.pi / 4)
     }
     
     //重新绘制
-    func reDraw() {
+    @objc func reDraw() {
         //计算小球下一个位置
         if (isStart) {
             ballX = ballX + CGFloat(length*sin(Double(ballAngle)));
@@ -191,7 +191,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     func boardCheck() {
         //上侧
         if (ballY-CGFloat(radiu)<=0) {
-            ballAngle = -(CGFloat(M_PI) + ballAngle);
+            ballAngle = -(CGFloat(Double.pi) + ballAngle);
             return;
         }
         //左侧和右侧
@@ -202,7 +202,7 @@ class GameView: UIView ,UIAlertViewDelegate{
         //下侧
         if (ballY+CGFloat(radiu)>=boardY&&ballX>=boardX&&ballX<=boardX+boardW){
             //在板上
-            ballAngle = CGFloat(M_PI) - ballAngle;
+            ballAngle = CGFloat(Double.pi) - ballAngle;
             return;
         }else if(ballY+CGFloat(radiu)>=height){
             //不在板上
@@ -212,28 +212,28 @@ class GameView: UIView ,UIAlertViewDelegate{
     
     //砖块检测
     func blockCheck() {
-        var checkP = CGPointZero;
+        var checkP = CGPoint.zero;
         //向上
-        checkP = CGPointMake(ballX, ballY-CGFloat(radiu));
-        if (self.isNeedBounce(checkP)) {
-            ballAngle = -(CGFloat(M_PI) + ballAngle);
+        checkP = CGPoint.init(x: ballX, y: ballY-CGFloat(radiu));
+        if (self.isNeedBounce(checkP: checkP)) {
+            ballAngle = -(CGFloat(Double.pi) + ballAngle);
             return;
         }
         //向下
-        checkP = CGPointMake(ballX, ballY+CGFloat(radiu));
-        if (self.isNeedBounce(checkP)) {
-            ballAngle = CGFloat(M_PI) - ballAngle;
+        checkP = CGPoint.init(x: ballX, y: ballY+CGFloat(radiu));
+        if (self.isNeedBounce(checkP: checkP)) {
+            ballAngle = CGFloat(Double.pi) - ballAngle;
             return;
         }
         //向左
-        checkP = CGPointMake(ballX-CGFloat(radiu), ballY);
-        if (self.isNeedBounce(checkP)) {
+        checkP = CGPoint.init(x: ballX-CGFloat(radiu), y: ballY);
+        if (self.isNeedBounce(checkP: checkP)) {
             ballAngle = -ballAngle;
             return;
         }
         //向右
-        checkP = CGPointMake(ballX+CGFloat(radiu), ballY);
-        if (self.isNeedBounce(checkP)) {
+        checkP = CGPoint.init(x: ballX+CGFloat(radiu), y: ballY);
+        if (self.isNeedBounce(checkP: checkP)) {
             ballAngle = -ballAngle;
             return;
         }
@@ -246,8 +246,8 @@ class GameView: UIView ,UIAlertViewDelegate{
             self.timer = nil;
             isStart = false;
             var message = "进入下一关";
-            gameNum++;
-            if (GameMap.getMapArrayByNumber(gameNum)==nil) {
+            gameNum += 1;
+            if (GameMap.getMapArrayByNumber(number: NSNumber.init(value: gameNum))==nil) {
                 gameNum=0;
                 message = "从第一关开始";
             }
@@ -268,14 +268,14 @@ class GameView: UIView ,UIAlertViewDelegate{
             return false
         }
         let number = self.blockArr[row][list]
-        if (number.isEqualToNumber(1)) {
+        if (number.isEqual(to: 1)) {
             var tmpArr = self.blockArr[row]
             tmpArr[list] = 0
-            blockNum--;
+            blockNum -= 1;
             self.blockArr[row] = tmpArr
             return true;
         }
-        if (number.isEqualToNumber(2)) {
+        if (number.isEqual(to: 2)) {
             return true
         }
         return false
@@ -291,7 +291,7 @@ class GameView: UIView ,UIAlertViewDelegate{
         alert.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         self.prepareForGame()
     }
     
