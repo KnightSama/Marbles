@@ -57,7 +57,7 @@ class GameView: UIView ,UIAlertViewDelegate{
         ballAngle = 0;
         blockW = 0;
         blockNum = 0;
-        startBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 100))
+        startBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 50))
         startBtn.backgroundColor = UIColor.gray
         startBtn.setTitle("开 始", for: UIControl.State.normal)
         isStart = false;
@@ -82,7 +82,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     
     func prepareForGame() {
         boardH = 10;
-        boardY = height - boardH;
+        boardY = height - boardH - (UIApplication.shared.statusBarFrame.height > 20 ? 34 : 0);
         boardW = 100;
         boardX = width/2.0 - boardW/2.0;
         
@@ -149,7 +149,7 @@ class GameView: UIView ,UIAlertViewDelegate{
             list = 0;
             for (_,value) in value.enumerated(){
                 if (value.isEqual(to: 1)) {
-                    let block = UIBezierPath(rect: CGRect.init(x: CGFloat(list)*blockW, y: CGFloat(row)*CGFloat(blockH), width: blockW, height: CGFloat(blockH)))
+                    let block = UIBezierPath(rect: CGRect.init(x: CGFloat(list)*blockW, y: CGFloat(row)*CGFloat(blockH) + UIApplication.shared.statusBarFrame.maxY + 30, width: blockW, height: CGFloat(blockH)))
                     UIColor.gray.setFill()
                     UIColor.black.setStroke()
                     block.fill()
