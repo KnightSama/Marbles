@@ -14,6 +14,8 @@ let radiu = 10.0
 let length = 4.0
 //砖块高度
 let blockH = 10
+//砖块与上方的距离
+let topH = UIApplication.shared.statusBarFrame.maxY + 30;
 
 class GameView: UIView ,UIAlertViewDelegate{
     
@@ -31,7 +33,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     //小球的方向角
     var ballAngle :CGFloat;
     //定时器
-    var timer :Timer?;
+    var displayLink :CADisplayLink?;
     //开始按钮
     var startBtn :UIButton;
     //游戏是否开始
@@ -91,9 +93,8 @@ class GameView: UIView ,UIAlertViewDelegate{
         startBtn.isHidden = false;
         self.blockArr = GameMap.getMapArrayByNumber(number: NSNumber.init(value: gameNum))!
         startBtn.frame = CGRect.init(x: width/2.0 - startBtn.frame.size.width/2.0, y: height/2.0-startBtn.frame.size.height/2.0, width: startBtn.frame.size.width, height: startBtn.frame.size.height)
-        if ((self.timer) == nil) {
-            self.timer = Timer.scheduledTimer(timeInterval: 1/60.0, target: self, selector: #selector(GameView.reDraw), userInfo: nil, repeats: true)
-        }
+        self.displayLink = self.displayLink ?? CADisplayLink.init(target: self, selector: #selector(GameView.reDraw))
+        self.displayLink?.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
     
     @objc func startButtonPress(btn: UIButton) {
@@ -149,7 +150,7 @@ class GameView: UIView ,UIAlertViewDelegate{
             list = 0;
             for (_,value) in value.enumerated(){
                 if (value.isEqual(to: 1)) {
-                    let block = UIBezierPath(rect: CGRect.init(x: CGFloat(list)*blockW, y: CGFloat(row)*CGFloat(blockH) + UIApplication.shared.statusBarFrame.maxY + 30, width: blockW, height: CGFloat(blockH)))
+                    let block = UIBezierPath(rect: CGRect.init(x: CGFloat(list)*blockW, y: CGFloat(row)*CGFloat(blockH) + topH, width: blockW, height: CGFloat(blockH)))
                     UIColor.gray.setFill()
                     UIColor.black.setStroke()
                     block.fill()
@@ -242,8 +243,8 @@ class GameView: UIView ,UIAlertViewDelegate{
     //胜利检测
     func GameEndCheck() {
         if (isStart && blockNum==0) {
-            self.timer!.invalidate()
-            self.timer = nil;
+            self.displayLink!.invalidate()
+            self.displayLink = nil;
             isStart = false;
             var message = "进入下一关";
             gameNum += 1;
@@ -259,7 +260,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     
     //是否需要反弹
     func isNeedBounce(checkP :CGPoint) ->Bool{
-        let row = NSInteger(checkP.y/CGFloat(blockH))
+        let row = NSInteger(checkP.y/CGFloat(blockH) + topH)
         let list = NSInteger(checkP.x/CGFloat(blockW))
         if (row+1>self.blockArr.count) {
             return false
@@ -283,8 +284,8 @@ class GameView: UIView ,UIAlertViewDelegate{
     
     //游戏结束
     func gameOver() {
-        self.timer!.invalidate()
-        self.timer = nil;
+        self.displayLink!.invalidate()
+        self.displayLink = nil;
         isStart = false;
         let alert = UIAlertView(title: "提示", message: "你输了", delegate: self, cancelButtonTitle: "重新开始")
         alert.tag = 1;
