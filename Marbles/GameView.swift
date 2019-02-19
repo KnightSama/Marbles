@@ -260,7 +260,7 @@ class GameView: UIView ,UIAlertViewDelegate{
     
     //是否需要反弹
     func isNeedBounce(checkP :CGPoint) ->Bool{
-        let row = NSInteger(checkP.y/CGFloat(blockH) + topH)
+        let row = NSInteger((checkP.y - topH)/CGFloat(blockH))
         let list = NSInteger(checkP.x/CGFloat(blockW))
         if (row+1>self.blockArr.count) {
             return false
