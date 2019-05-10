@@ -38,36 +38,21 @@ class BallView: UIView {
     /// π
     let pi = CGFloat(Double.pi)
     /// 球的半径
-    var ballRadius : CGFloat
+    var ballRadius : CGFloat = 10.0
     /// 球的中心点位置
-    var ballLocation : CGPoint
+    var ballLocation = CGPoint.zero
     /// 球运动的角度
-    private var ballRunAngle : CGFloat
+    private var ballRunAngle : CGFloat = CGFloat(Double.pi) / 4.0
     /// 小球的横向运动方向
-    private var ballHorizontalDirection : BallDirection
+    private var ballHorizontalDirection : BallDirection = .right
     /// 小球的纵向运动方向
-    private var ballVerticalDirection : BallDirection
+    private var ballVerticalDirection : BallDirection = .up
     /// 小球运动的速度(每次移动的距离)
-    var ballSpeed: CGFloat
+    var ballSpeed: CGFloat = 4.0
     /// 当前的运动状态
-    var isRun : Bool
+    var isRun : Bool = false
     /// 定时器
     var displayLink :CADisplayLink?
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override init(frame: CGRect) {
-        self.ballRadius = 10.0
-        self.ballRunAngle = pi / 4.0;
-        self.ballSpeed = 4.0;
-        self.ballLocation = CGPoint.zero
-        self.ballHorizontalDirection = .right
-        self.ballVerticalDirection = .up
-        self.isRun = false
-        super.init(frame: frame)
-    }
     
     /// 开始移动小球
     func start() {
