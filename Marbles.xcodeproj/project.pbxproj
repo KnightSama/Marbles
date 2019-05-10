@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188D0CEE2223D2E0006B158B /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D0CED2223D2E0006B158B /* BallView.swift */; };
 		1FE6763A1C4F6866008CBB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE676391C4F6866008CBB62 /* AppDelegate.swift */; };
 		1FE6763C1C4F6866008CBB62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6763B1C4F6866008CBB62 /* ViewController.swift */; };
 		1FE6763F1C4F6866008CBB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6763D1C4F6866008CBB62 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188D0CED2223D2E0006B158B /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		1FE676361C4F6866008CBB62 /* Marbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE676391C4F6866008CBB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE6763B1C4F6866008CBB62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				1FE676391C4F6866008CBB62 /* AppDelegate.swift */,
 				1FE6763B1C4F6866008CBB62 /* ViewController.swift */,
 				1FE6764B1C4F68BA008CBB62 /* GameView.swift */,
+				188D0CED2223D2E0006B158B /* BallView.swift */,
 				1FE6764D1C4F68CF008CBB62 /* GameMap.swift */,
 				1FE6763D1C4F6866008CBB62 /* Main.storyboard */,
 				1FE676401C4F6866008CBB62 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */,
 				1FE6763C1C4F6866008CBB62 /* ViewController.swift in Sources */,
 				1FE6764C1C4F68BA008CBB62 /* GameView.swift in Sources */,
+				188D0CEE2223D2E0006B158B /* BallView.swift in Sources */,
 				1FE6763A1C4F6866008CBB62 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

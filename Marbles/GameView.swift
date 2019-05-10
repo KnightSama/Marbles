@@ -296,5 +296,4 @@ class GameView: UIView ,UIAlertViewDelegate{
         self.prepareForGame()
     }
     
-    
 }
