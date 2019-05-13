@@ -54,6 +54,15 @@ class BallView: UIView {
     /// 定时器
     var displayLink :CADisplayLink?
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
+    }
+    
     /// 开始移动小球
     func start() {
         if isRun {

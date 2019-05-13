@@ -20,6 +20,8 @@ class MapView: UIView {
     var model : MapModel = MapModel() {
         willSet {
             self.statusArray = newValue.infoArr
+        }
+        didSet {
             self.prepareLayout()
         }
     }
@@ -32,11 +34,12 @@ class MapView: UIView {
     
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
     }
     
     /// 重新布局

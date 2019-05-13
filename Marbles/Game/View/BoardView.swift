@@ -20,11 +20,12 @@ class BoardView: UIView {
     var board = CALayer()
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
         self.board.backgroundColor = UIColor.gray.cgColor
         self.layer.addSublayer(self.board)
         self.backgroundColor = UIColor.clear;
@@ -32,7 +33,6 @@ class BoardView: UIView {
         self.addGestureRecognizer(panGesture)
     }
 
-    
     @objc func moveBoard(panGesture :UIPanGestureRecognizer) {
         let movePoint = panGesture.translation(in: self)
         self.board.frame.origin.x = self.board.frame.minX + movePoint.x;

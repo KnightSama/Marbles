@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func start(_ sender: Any) {
+//        self.present(GameViewController(), animated: true, completion: nil)
+    }
+    
 }
 

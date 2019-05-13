@@ -18,6 +18,6 @@ class MapModel: NSObject {
     /// 高度
     var height:CGFloat = 0.0
     /// 位置状态
-    let infoArr = Array.init([[0]])
+    var infoArr = Array.init([[0]])
 }
 
