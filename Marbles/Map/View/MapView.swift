@@ -45,7 +45,9 @@ class MapView: UIView {
     /// 重新布局
     func prepareLayout() {
         // 计算单个block的大小
-        self.blockSize = CGSize(width: self.frame.width / CGFloat(self.statusArray.first!.count), height: self.model.height)
+        let width = self.frame.width / CGFloat(self.statusArray.first!.count)
+        let height = self.model.height > 0 ? self.model.height : width
+        self.blockSize = CGSize(width: width, height: height)
         self.setNeedsDisplay()
     }
     
@@ -59,9 +61,7 @@ class MapView: UIView {
                     // 普通砖块
                     let block = UIBezierPath(rect: CGRect(origin: CGPoint(x: CGFloat(col) * self.blockSize.width, y: CGFloat(row) * self.blockSize.height), size: self.blockSize))
                     UIColor.gray.setFill()
-                    UIColor.black.setStroke()
                     block.fill()
-                    block.stroke()
                     // 增加普通砖块的数量
                     self.normalBlockNum = self.normalBlockNum + 1
                 }

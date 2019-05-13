@@ -30,6 +30,7 @@ class GameViewController: UIViewController,MapViewDelegate,BallViewDelegate,Boar
         self.backImageView = UIImageView(frame: self.view.bounds)
         self.backImageView.backgroundColor = UIColor.gray
         self.view.addSubview(self.backImageView)
+        
         // 设置内容视图的边距
         var contentEdge = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         if #available(iOS 11.0, *) {
@@ -39,14 +40,17 @@ class GameViewController: UIViewController,MapViewDelegate,BallViewDelegate,Boar
         self.contentView = UIView(frame: CGRect(x: contentEdge.left, y: contentEdge.top, width: self.view.frame.width - contentEdge.left - contentEdge.right, height: self.view.frame.height - contentEdge.top - contentEdge.bottom))
         self.contentView.backgroundColor = UIColor.white
         self.view.addSubview(self.contentView)
+        
         // 初始化小球视图
         self.ballView = BallView(frame: self.contentView.bounds)
         self.ballView.delegate = self
         self.contentView.addSubview(self.ballView)
+        
         // 初始化地图
         self.mapView = MapView(frame: self.contentView.bounds)
         self.mapView.delegate = self
         self.contentView.addSubview(self.mapView)
+        
         // 初始化跳板
         self.boardView = BoardView(frame: self.contentView.bounds)
         self.boardView.delegate = self

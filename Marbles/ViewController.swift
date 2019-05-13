@@ -12,7 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // FIXME: 旧版入口待移除
         self.view.backgroundColor = UIColor.white;
         let view = GameView(frame: self.view.bounds)
         self.view.addSubview(view)
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
 
     @IBAction func start(_ sender: Any) {
 //        self.present(GameViewController(), animated: true, completion: nil)
+//        self.present(MapEditorViewController(), animated: true, completion: nil)
     }
     
 }

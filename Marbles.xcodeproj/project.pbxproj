@@ -11,6 +11,8 @@
 		1880957222854A0C00B7311D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880957122854A0C00B7311D /* BoardView.swift */; };
 		188095742285566B00B7311D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188095732285566B00B7311D /* MapModel.swift */; };
 		1883F6062289038D00354207 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F6042289038D00354207 /* GameViewController.swift */; };
+		1883F61022893BF400354207 /* MapEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F60F22893BF400354207 /* MapEditorViewController.swift */; };
+		1883F61422893C7D00354207 /* MapEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F61322893C7D00354207 /* MapEditorView.swift */; };
 		188D0CEE2223D2E0006B158B /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D0CED2223D2E0006B158B /* BallView.swift */; };
 		1FE6763A1C4F6866008CBB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE676391C4F6866008CBB62 /* AppDelegate.swift */; };
 		1FE6763C1C4F6866008CBB62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6763B1C4F6866008CBB62 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		1880957122854A0C00B7311D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		188095732285566B00B7311D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		1883F6042289038D00354207 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1883F60F22893BF400354207 /* MapEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEditorViewController.swift; sourceTree = "<group>"; };
+		1883F61322893C7D00354207 /* MapEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEditorView.swift; sourceTree = "<group>"; };
 		188D0CED2223D2E0006B158B /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		1FE676361C4F6866008CBB62 /* Marbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marbles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE676391C4F6866008CBB62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +78,6 @@
 		1883F60B2289052300354207 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				1883F60D2289059600354207 /* Model */,
 				1883F60C2289057C00354207 /* View */,
 				1883F6042289038D00354207 /* GameViewController.swift */,
 			);
@@ -86,7 +89,6 @@
 			children = (
 				188D0CED2223D2E0006B158B /* BallView.swift */,
 				1880957122854A0C00B7311D /* BoardView.swift */,
-				1880956F2285499B00B7311D /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +99,25 @@
 				188095732285566B00B7311D /* MapModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1883F61122893C4F00354207 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1883F60D2289059600354207 /* Model */,
+				1883F61222893C5E00354207 /* View */,
+				1883F60F22893BF400354207 /* MapEditorViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1883F61222893C5E00354207 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1880956F2285499B00B7311D /* MapView.swift */,
+				1883F61322893C7D00354207 /* MapEditorView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1FE6762D1C4F6866008CBB62 = {
@@ -119,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				1883F60B2289052300354207 /* Game */,
+				1883F61122893C4F00354207 /* Map */,
 				1883F603228900DA00354207 /* Old */,
 				1883F60A228904DB00354207 /* Main */,
 			);
@@ -200,6 +222,8 @@
 				1880957222854A0C00B7311D /* BoardView.swift in Sources */,
 				1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */,
 				188095702285499B00B7311D /* MapView.swift in Sources */,
+				1883F61422893C7D00354207 /* MapEditorView.swift in Sources */,
+				1883F61022893BF400354207 /* MapEditorViewController.swift in Sources */,
 				1883F6062289038D00354207 /* GameViewController.swift in Sources */,
 				1FE6763C1C4F6866008CBB62 /* ViewController.swift in Sources */,
 				1FE6764C1C4F68BA008CBB62 /* GameView.swift in Sources */,
