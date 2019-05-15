@@ -6,5 +6,6 @@ target 'Marbles' do
   use_frameworks!
 
   # Pods for Marbles
+  pod 'WCDB.swift'
 
 end
