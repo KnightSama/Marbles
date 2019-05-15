@@ -57,7 +57,7 @@ class MapView: UIView {
         // 绘制图形
         for (row , rowArray) in self.statusArray.enumerated() {
             for (col , status) in rowArray.enumerated() {
-                if status == 1 {
+                if status == DrawType.block.rawValue {
                     // 普通砖块
                     let block = UIBezierPath(rect: CGRect(origin: CGPoint(x: CGFloat(col) * self.blockSize.width, y: CGFloat(row) * self.blockSize.height), size: self.blockSize))
                     UIColor.gray.setFill()
@@ -88,10 +88,10 @@ class MapView: UIView {
         }
         // 检查所在点的砖块状态
         let status = self.statusArray[rowNum][colNum]
-        if status == 1 {
+        if status == DrawType.block.rawValue {
             // 该位置是砖块
             // 取消该砖块
-            self.statusArray[rowNum][colNum] = 0
+            self.statusArray[rowNum][colNum] = DrawType.blank.rawValue
             self.setNeedsDisplay()
             return true
         }

@@ -39,7 +39,6 @@ class MapEditorViewController: UIViewController {
     
         // 初始化地图
         self.mapEditorView = MapEditorView(rowNum: 10, colNum: 20, height: 0, frame: self.contentView.bounds)
-        self.mapEditorView.prepareForEdit()
         self.contentView.addSubview(self.mapEditorView)
     }
     
