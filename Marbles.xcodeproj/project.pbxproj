@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187AA4BE228A5C49007C6255 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AA4BD228A5C49007C6255 /* MapManager.swift */; };
 		188095702285499B00B7311D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880956F2285499B00B7311D /* MapView.swift */; };
 		1880957222854A0C00B7311D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880957122854A0C00B7311D /* BoardView.swift */; };
 		188095742285566B00B7311D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188095732285566B00B7311D /* MapModel.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187AA4BD228A5C49007C6255 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		1880956F2285499B00B7311D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1880957122854A0C00B7311D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		188095732285566B00B7311D /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187AA4BC228A5C33007C6255 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				187AA4BD228A5C49007C6255 /* MapManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		1883F603228900DA00354207 /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		1883F61122893C4F00354207 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				187AA4BC228A5C33007C6255 /* Manager */,
 				1883F60D2289059600354207 /* Model */,
 				1883F61222893C5E00354207 /* View */,
 				1883F60F22893BF400354207 /* MapEditorViewController.swift */,
@@ -222,6 +233,7 @@
 				1880957222854A0C00B7311D /* BoardView.swift in Sources */,
 				1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */,
 				188095702285499B00B7311D /* MapView.swift in Sources */,
+				187AA4BE228A5C49007C6255 /* MapManager.swift in Sources */,
 				1883F61422893C7D00354207 /* MapEditorView.swift in Sources */,
 				1883F61022893BF400354207 /* MapEditorViewController.swift in Sources */,
 				1883F6062289038D00354207 /* GameViewController.swift in Sources */,

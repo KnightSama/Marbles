@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.white;
         let view = GameView(frame: self.view.bounds)
         self.view.addSubview(view)
+    
     }
 
     override func didReceiveMemoryWarning() {

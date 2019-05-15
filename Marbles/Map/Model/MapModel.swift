@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapModel: NSObject {
+class MapModel: NSObject,Codable {
     /// 编码
     var code = ""
     /// 名称
