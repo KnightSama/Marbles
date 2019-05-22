@@ -22,6 +22,8 @@
 		1FE676441C4F6866008CBB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE676421C4F6866008CBB62 /* LaunchScreen.storyboard */; };
 		1FE6764C1C4F68BA008CBB62 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6764B1C4F68BA008CBB62 /* GameView.swift */; };
 		1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6764D1C4F68CF008CBB62 /* GameMap.swift */; };
+		5632B3CB228D3B49009AF53A /* MapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632B3CA228D3B49009AF53A /* MapListViewController.swift */; };
+		5632B3CE228D3E2C009AF53A /* MapListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */; };
 		D2B8806270A8B83A3FA3739F /* Pods_Marbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254988F1517BD252104AC8DD /* Pods_Marbles.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		1FE6764B1C4F68BA008CBB62 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1FE6764D1C4F68CF008CBB62 /* GameMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
 		254988F1517BD252104AC8DD /* Pods_Marbles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marbles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5632B3CA228D3B49009AF53A /* MapListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewController.swift; sourceTree = "<group>"; };
+		5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewCell.swift; sourceTree = "<group>"; };
 		F1B885D45DA14755DD760E11 /* Pods-Marbles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marbles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marbles/Pods-Marbles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +170,30 @@
 		1FE676381C4F6866008CBB62 /* Marbles */ = {
 			isa = PBXGroup;
 			children = (
+				5632B3C9228D3B14009AF53A /* MapList */,
 				1883F60B2289052300354207 /* Game */,
 				1883F61122893C4F00354207 /* Map */,
 				1883F603228900DA00354207 /* Old */,
 				1883F60A228904DB00354207 /* Main */,
 			);
 			path = Marbles;
+			sourceTree = "<group>";
+		};
+		5632B3C9228D3B14009AF53A /* MapList */ = {
+			isa = PBXGroup;
+			children = (
+				5632B3CC228D3DFC009AF53A /* View */,
+				5632B3CA228D3B49009AF53A /* MapListViewController.swift */,
+			);
+			path = MapList;
+			sourceTree = "<group>";
+		};
+		5632B3CC228D3DFC009AF53A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BE75BFF3100B06F6A645D437 /* Frameworks */ = {
@@ -304,6 +326,8 @@
 				1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */,
 				188095702285499B00B7311D /* MapView.swift in Sources */,
 				187AA4BE228A5C49007C6255 /* MapManager.swift in Sources */,
+				5632B3CE228D3E2C009AF53A /* MapListViewCell.swift in Sources */,
+				5632B3CB228D3B49009AF53A /* MapListViewController.swift in Sources */,
 				1883F61422893C7D00354207 /* MapEditorView.swift in Sources */,
 				1883F61022893BF400354207 /* MapEditorViewController.swift in Sources */,
 				1883F6062289038D00354207 /* GameViewController.swift in Sources */,

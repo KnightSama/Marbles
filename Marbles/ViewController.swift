@@ -26,7 +26,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: Any) {
-//        self.present(GameViewController(), animated: true, completion: nil)
+        self.present(GameViewController(), animated: true, completion: nil)
+    }
+    
+    @IBAction func map(_ sender: Any) {
+        self.present(UINavigationController(rootViewController: MapListViewController()), animated: true, completion: nil)
+    }
+    
+    @IBAction func edit(_ sender: Any) {
         self.present(MapEditorViewController(), animated: true, completion: nil)
     }
     
