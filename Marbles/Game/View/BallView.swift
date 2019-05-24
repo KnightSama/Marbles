@@ -27,14 +27,14 @@ enum BallDirection {
     }
 }
 
-protocol BallViewDelegate {
+protocol BallViewDelegate : AnyObject {
     /// 检查指定的点是否在指定方向存在碰撞
     func ballViewCheckCollisionLocation(location:CGPoint,direction:BallDirection) -> Bool;
 }
 
 class BallView: UIView {
     /// 代理
-    var delegate : BallViewDelegate?
+    weak var delegate : BallViewDelegate?
     /// π
     let pi = CGFloat(Double.pi)
     /// 球的半径

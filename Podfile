@@ -7,5 +7,7 @@ target 'Marbles' do
 
   # Pods for Marbles
   pod 'WCDB.swift'
+  pod 'Masonry'
 
 end
+

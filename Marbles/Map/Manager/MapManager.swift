@@ -49,7 +49,7 @@ class MapManager: NSObject {
     }
     
     /// 获取全部地图列表
-    func loadMap() -> [MapModel]?? {
+    func loadMap() -> [MapModel]? {
         return try? self.database.getObjects(on: MapModel.Properties.all, fromTable: tableName)
     }
     

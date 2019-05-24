@@ -36,7 +36,7 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
         mapListView.delegate = self
         mapListView.dataSource = self
         // 注册cell
-        mapListView.register(MapListViewCell.self, forCellWithReuseIdentifier: "MapListViewCell")
+        mapListView.register(UINib(nibName: "MapListViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MapListViewCell")
         
         return mapListView
     }()
@@ -47,6 +47,12 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
         self.view.backgroundColor = .white
         
         self.createSubViews()
+        
+        if let navigationBar = self.navigationController?.navigationBar {
+            self.title = "选择地图"
+            let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(back))
+            navigationBar.items?.last?.leftBarButtonItem = leftItem
+        }
 
         if #available(iOS 11.0, *) {
             self.mapListView.contentInsetAdjustmentBehavior = .never
@@ -60,6 +66,10 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
         self.view.addSubview(self.mapListView)
     }
     
+    @objc func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -70,7 +80,6 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.backgroundColor = .orange
     }
     
 }

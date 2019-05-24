@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func map(_ sender: Any) {
-        self.present(UINavigationController(rootViewController: MapListViewController()), animated: true, completion: nil)
+//        self.present(UINavigationController(rootViewController: MapListViewController()), animated: true, completion: nil)
     }
     
     @IBAction func edit(_ sender: Any) {

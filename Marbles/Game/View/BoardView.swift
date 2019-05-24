@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol BoardViewDelegate {
+@objc protocol BoardViewDelegate {
     /// 当板子移动时调用方法
-    func boardViewDidMove(newFrame:CGRect)
+    @objc optional func boardViewDidMove(newFrame:CGRect)
 }
 
 class BoardView: UIView {
     /// 代理
-    var delegate : BoardViewDelegate?
+    weak var delegate : BoardViewDelegate?
     /// 跳板视图
     var board = CALayer()
     
@@ -43,8 +43,6 @@ class BoardView: UIView {
         }
         panGesture.setTranslation(CGPoint.zero, in: self)
         
-        if let delegate = self.delegate {
-            delegate.boardViewDidMove(newFrame: self.board.frame)
-        }
+        self.delegate?.boardViewDidMove?(newFrame: self.board.frame)
     }
 }

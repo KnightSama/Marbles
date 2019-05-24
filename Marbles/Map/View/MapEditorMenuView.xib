@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MapEditorMenuView" customModule="Marbles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="507" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdW-vk-X11">
+                    <rect key="frame" x="20" y="48" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSy-Xu-sZ1">
+                    <rect key="frame" x="20" y="15" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GL-mB-yZu">
+                    <rect key="frame" x="20" y="81" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-nQ-evI">
+                    <rect key="frame" x="20" y="114" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7o-sy-bCP" customClass="NumberSelectView" customModule="Marbles" customModuleProvider="target">
+                    <rect key="frame" x="61" y="47" width="77" height="20"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="77" id="DlQ-jv-yhX"/>
+                        <constraint firstAttribute="height" constant="20" id="uiM-Oi-BII"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="currentValue">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectViewChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="KZ8-sg-J4g"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-J8-xdL" customClass="NumberSelectView" customModule="Marbles" customModuleProvider="target">
+                    <rect key="frame" x="61" y="80" width="77" height="20"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="currentValue">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectViewChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="4Uq-zd-UR6"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4f-hi-uRp" customClass="NumberSelectView" customModule="Marbles" customModuleProvider="target">
+                    <rect key="frame" x="61" y="113" width="77" height="20"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="currentValue">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selectViewChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="zyX-Xd-TaU"/>
+                    </connections>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Map" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-WN-8aL">
+                    <rect key="frame" x="61" y="15" width="150" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="RjX-eT-92y"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-Ik-D66">
+                    <rect key="frame" x="437" y="44.5" width="50" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="BBh-V2-0uI"/>
+                        <constraint firstAttribute="width" constant="50" id="Dk1-EE-tze"/>
+                    </constraints>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="save:" destination="iN0-l3-epB" eventType="touchUpInside" id="1if-py-GgU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-F3-22E">
+                    <rect key="frame" x="437" y="79.5" width="50" height="25"/>
+                    <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="Im4-YE-Pad"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f66-d9-y8B">
+                    <rect key="frame" x="437" y="114.5" width="50" height="25"/>
+                    <state key="normal" title="清空"/>
+                    <connections>
+                        <action selector="clear:" destination="iN0-l3-epB" eventType="touchUpInside" id="tST-1t-N8w"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="aPh-Cm-x8m">
+                    <rect key="frame" x="61" y="147" width="136" height="29"/>
+                    <segments>
+                        <segment title="橡皮擦"/>
+                        <segment title="可破坏方块"/>
+                    </segments>
+                    <connections>
+                        <action selector="drawTypeChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="9xY-nc-0up"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画笔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yof-3i-41z">
+                    <rect key="frame" x="20" y="152" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="t7o-sy-bCP" firstAttribute="leading" secondItem="TdW-vk-X11" secondAttribute="trailing" constant="10" id="2Hk-yS-jhE"/>
+                <constraint firstItem="q4f-hi-uRp" firstAttribute="height" secondItem="t7o-sy-bCP" secondAttribute="height" id="39C-0Q-Oit"/>
+                <constraint firstItem="BSy-Xu-sZ1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="3OC-ha-Amg"/>
+                <constraint firstItem="q4f-hi-uRp" firstAttribute="width" secondItem="t7o-sy-bCP" secondAttribute="width" id="3b2-Ty-w3T"/>
+                <constraint firstItem="q4f-hi-uRp" firstAttribute="leading" secondItem="t7o-sy-bCP" secondAttribute="leading" id="4Lo-Uw-7cS"/>
+                <constraint firstItem="TdW-vk-X11" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="5EW-En-kDm"/>
+                <constraint firstItem="Ql5-F3-22E" firstAttribute="top" secondItem="Yit-Ik-D66" secondAttribute="bottom" constant="10" id="5j0-bh-MGn"/>
+                <constraint firstItem="i7N-J8-xdL" firstAttribute="width" secondItem="t7o-sy-bCP" secondAttribute="width" id="6CA-3s-4xf"/>
+                <constraint firstItem="f66-d9-y8B" firstAttribute="top" secondItem="Ql5-F3-22E" secondAttribute="bottom" constant="10" id="79C-Af-wbz"/>
+                <constraint firstItem="lMI-nQ-evI" firstAttribute="top" secondItem="7GL-mB-yZu" secondAttribute="bottom" constant="15" id="9RV-dw-VoE"/>
+                <constraint firstItem="Ql5-F3-22E" firstAttribute="leading" secondItem="Yit-Ik-D66" secondAttribute="leading" id="JBJ-we-3jV"/>
+                <constraint firstItem="7GL-mB-yZu" firstAttribute="leading" secondItem="TdW-vk-X11" secondAttribute="leading" id="Jiz-5v-2Og"/>
+                <constraint firstItem="Ql5-F3-22E" firstAttribute="height" secondItem="Yit-Ik-D66" secondAttribute="height" id="OAt-DN-YUb"/>
+                <constraint firstItem="f66-d9-y8B" firstAttribute="height" secondItem="Ql5-F3-22E" secondAttribute="height" id="PsJ-pg-cRd"/>
+                <constraint firstItem="lMI-nQ-evI" firstAttribute="leading" secondItem="TdW-vk-X11" secondAttribute="leading" id="Rf4-rM-fkC"/>
+                <constraint firstItem="TdW-vk-X11" firstAttribute="top" secondItem="BSy-Xu-sZ1" secondAttribute="bottom" constant="15" id="Tq2-KH-Ffy"/>
+                <constraint firstItem="yof-3i-41z" firstAttribute="top" secondItem="lMI-nQ-evI" secondAttribute="bottom" constant="20" id="Tsj-VW-obX"/>
+                <constraint firstAttribute="trailing" secondItem="Yit-Ik-D66" secondAttribute="trailing" constant="20" id="UAP-Za-A6w"/>
+                <constraint firstItem="TdW-vk-X11" firstAttribute="leading" secondItem="BSy-Xu-sZ1" secondAttribute="leading" id="faR-wi-pV2"/>
+                <constraint firstItem="Ql5-F3-22E" firstAttribute="width" secondItem="Yit-Ik-D66" secondAttribute="width" id="gIB-r2-Wif"/>
+                <constraint firstItem="q4f-hi-uRp" firstAttribute="centerY" secondItem="lMI-nQ-evI" secondAttribute="centerY" id="gaI-J4-pqP"/>
+                <constraint firstItem="aPh-Cm-x8m" firstAttribute="leading" secondItem="yof-3i-41z" secondAttribute="trailing" constant="10" id="giN-Ba-Ydc"/>
+                <constraint firstItem="t7o-sy-bCP" firstAttribute="centerY" secondItem="TdW-vk-X11" secondAttribute="centerY" id="kxF-Al-lMc"/>
+                <constraint firstItem="Yit-Ik-D66" firstAttribute="centerY" secondItem="t7o-sy-bCP" secondAttribute="centerY" id="l1C-6R-2QX"/>
+                <constraint firstItem="i7N-J8-xdL" firstAttribute="height" secondItem="t7o-sy-bCP" secondAttribute="height" id="lHi-qg-ur0"/>
+                <constraint firstItem="f66-d9-y8B" firstAttribute="width" secondItem="Ql5-F3-22E" secondAttribute="width" id="mGW-Cg-GVf"/>
+                <constraint firstItem="7GL-mB-yZu" firstAttribute="top" secondItem="TdW-vk-X11" secondAttribute="bottom" constant="15" id="mS4-45-kY9"/>
+                <constraint firstItem="yof-3i-41z" firstAttribute="leading" secondItem="lMI-nQ-evI" secondAttribute="leading" id="ohH-2N-afd"/>
+                <constraint firstItem="aPh-Cm-x8m" firstAttribute="centerY" secondItem="yof-3i-41z" secondAttribute="centerY" id="oig-tW-hTk"/>
+                <constraint firstItem="i7N-J8-xdL" firstAttribute="leading" secondItem="t7o-sy-bCP" secondAttribute="leading" id="soe-MY-Fvu"/>
+                <constraint firstItem="dSM-WN-8aL" firstAttribute="leading" secondItem="BSy-Xu-sZ1" secondAttribute="trailing" constant="10" id="sos-Ij-LZz"/>
+                <constraint firstItem="dSM-WN-8aL" firstAttribute="centerY" secondItem="BSy-Xu-sZ1" secondAttribute="centerY" id="vrI-wF-4ne"/>
+                <constraint firstItem="f66-d9-y8B" firstAttribute="leading" secondItem="Ql5-F3-22E" secondAttribute="leading" id="y4M-pm-rWv"/>
+                <constraint firstItem="i7N-J8-xdL" firstAttribute="centerY" secondItem="7GL-mB-yZu" secondAttribute="centerY" id="zUP-fX-d9N"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="colNumSelectView" destination="i7N-J8-xdL" id="82g-82-DwZ"/>
+                <outlet property="drawTypeSelectView" destination="aPh-Cm-x8m" id="J96-PM-Hgo"/>
+                <outlet property="heightSelectView" destination="q4f-hi-uRp" id="4bS-fR-vBh"/>
+                <outlet property="rowNumSelectView" destination="t7o-sy-bCP" id="qLu-cY-pG8"/>
+                <outlet property="titleField" destination="dSM-WN-8aL" id="f4d-nf-zQd"/>
+            </connections>
+            <point key="canvasLocation" x="-1090" y="-559"/>
+        </view>
+    </objects>
+</document>

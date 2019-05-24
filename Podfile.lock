@@ -1,4 +1,5 @@
 PODS:
+  - Masonry (1.1.0)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDB.swift (1.0.8.2):
@@ -7,19 +8,22 @@ PODS:
   - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
+  - Masonry
   - WCDB.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Masonry
     - SQLiteRepairKit
     - WCDB.swift
     - WCDBOptimizedSQLCipher
 
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: eef11956259a76074ad114ce6112116d5a562656
+PODFILE CHECKSUM: d0252a494f3b160abd65782591c4ef1a33100e92
 
-COCOAPODS: 1.7.0.beta.1
+COCOAPODS: 1.7.0.rc.2

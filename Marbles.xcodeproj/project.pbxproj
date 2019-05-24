@@ -22,8 +22,12 @@
 		1FE676441C4F6866008CBB62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE676421C4F6866008CBB62 /* LaunchScreen.storyboard */; };
 		1FE6764C1C4F68BA008CBB62 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6764B1C4F68BA008CBB62 /* GameView.swift */; };
 		1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6764D1C4F68CF008CBB62 /* GameMap.swift */; };
+		56262E2522963D140004293A /* NumberSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56262E2422963D140004293A /* NumberSelectView.swift */; };
+		56262E292296466B0004293A /* MapEditorMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56262E282296466B0004293A /* MapEditorMenuView.swift */; };
+		56262E2B2296467D0004293A /* MapEditorMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56262E2A2296467D0004293A /* MapEditorMenuView.xib */; };
 		5632B3CB228D3B49009AF53A /* MapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632B3CA228D3B49009AF53A /* MapListViewController.swift */; };
-		5632B3CE228D3E2C009AF53A /* MapListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */; };
+		567B1D2322954A1700F6A70C /* MapListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B1D2122954A1700F6A70C /* MapListViewCell.swift */; };
+		567B1D2422954A1700F6A70C /* MapListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 567B1D2222954A1700F6A70C /* MapListViewCell.xib */; };
 		D2B8806270A8B83A3FA3739F /* Pods_Marbles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254988F1517BD252104AC8DD /* Pods_Marbles.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +51,12 @@
 		1FE6764B1C4F68BA008CBB62 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		1FE6764D1C4F68CF008CBB62 /* GameMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
 		254988F1517BD252104AC8DD /* Pods_Marbles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marbles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56262E2422963D140004293A /* NumberSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectView.swift; sourceTree = "<group>"; };
+		56262E282296466B0004293A /* MapEditorMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEditorMenuView.swift; sourceTree = "<group>"; };
+		56262E2A2296467D0004293A /* MapEditorMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapEditorMenuView.xib; sourceTree = "<group>"; };
 		5632B3CA228D3B49009AF53A /* MapListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewController.swift; sourceTree = "<group>"; };
-		5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewCell.swift; sourceTree = "<group>"; };
+		567B1D2122954A1700F6A70C /* MapListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewCell.swift; sourceTree = "<group>"; };
+		567B1D2222954A1700F6A70C /* MapListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapListViewCell.xib; sourceTree = "<group>"; };
 		F1B885D45DA14755DD760E11 /* Pods-Marbles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marbles.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marbles/Pods-Marbles.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +125,7 @@
 			children = (
 				188D0CED2223D2E0006B158B /* BallView.swift */,
 				1880957122854A0C00B7311D /* BoardView.swift */,
+				1880956F2285499B00B7311D /* MapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 		1883F61122893C4F00354207 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				56262E2122963AED0004293A /* Util */,
 				187AA4BC228A5C33007C6255 /* Manager */,
 				1883F60D2289059600354207 /* Model */,
 				1883F61222893C5E00354207 /* View */,
@@ -143,8 +153,9 @@
 		1883F61222893C5E00354207 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1880956F2285499B00B7311D /* MapView.swift */,
 				1883F61322893C7D00354207 /* MapEditorView.swift */,
+				56262E282296466B0004293A /* MapEditorMenuView.swift */,
+				56262E2A2296467D0004293A /* MapEditorMenuView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +190,22 @@
 			path = Marbles;
 			sourceTree = "<group>";
 		};
+		56262E2122963AED0004293A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				56262E2322963AFE0004293A /* View */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		56262E2322963AFE0004293A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56262E2422963D140004293A /* NumberSelectView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5632B3C9228D3B14009AF53A /* MapList */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +218,8 @@
 		5632B3CC228D3DFC009AF53A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5632B3CD228D3E2C009AF53A /* MapListViewCell.swift */,
+				567B1D2122954A1700F6A70C /* MapListViewCell.swift */,
+				567B1D2222954A1700F6A70C /* MapListViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE676441C4F6866008CBB62 /* LaunchScreen.storyboard in Resources */,
+				567B1D2422954A1700F6A70C /* MapListViewCell.xib in Resources */,
 				1FE676411C4F6866008CBB62 /* Assets.xcassets in Resources */,
+				56262E2B2296467D0004293A /* MapEditorMenuView.xib in Resources */,
 				1FE6763F1C4F6866008CBB62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,12 +311,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Marbles/Pods-Marbles-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDBSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
@@ -325,8 +357,10 @@
 				1880957222854A0C00B7311D /* BoardView.swift in Sources */,
 				1FE6764E1C4F68CF008CBB62 /* GameMap.swift in Sources */,
 				188095702285499B00B7311D /* MapView.swift in Sources */,
+				56262E2522963D140004293A /* NumberSelectView.swift in Sources */,
 				187AA4BE228A5C49007C6255 /* MapManager.swift in Sources */,
-				5632B3CE228D3E2C009AF53A /* MapListViewCell.swift in Sources */,
+				567B1D2322954A1700F6A70C /* MapListViewCell.swift in Sources */,
+				56262E292296466B0004293A /* MapEditorMenuView.swift in Sources */,
 				5632B3CB228D3B49009AF53A /* MapListViewController.swift in Sources */,
 				1883F61422893C7D00354207 /* MapEditorView.swift in Sources */,
 				1883F61022893BF400354207 /* MapEditorViewController.swift in Sources */,

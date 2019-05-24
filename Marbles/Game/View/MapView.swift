@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol MapViewDelegate {
+@objc protocol MapViewDelegate {
     /// 所有砖块都消除了游戏结束
     func mapViewAllBlockDissmiss()
 }
 
 class MapView: UIView {
     /// 代理
-    var delegate : MapViewDelegate?
+    weak var delegate : MapViewDelegate?
     /// 当前显示的数据源
     var model : MapModel = MapModel() {
         willSet {
@@ -70,9 +70,7 @@ class MapView: UIView {
         // 检查砖块数量
         if self.normalBlockNum == 0 {
             // 砖块全部消失，结束
-            if let delegate = self.delegate {
-                delegate.mapViewAllBlockDissmiss()
-            }
+            self.delegate?.mapViewAllBlockDissmiss()
         }
     }
     
