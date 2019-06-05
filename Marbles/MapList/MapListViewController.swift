@@ -9,6 +9,8 @@
 import UIKit
 
 class MapListViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    private var modelArr:Array<MapModel>?
 
     private lazy var mapListView:UICollectionView = {
         // 计算顶部距离
@@ -59,6 +61,8 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
+        
+        self.loadMaps()
     }
     
     /// 创建布局视图
@@ -66,16 +70,27 @@ class MapListViewController: UIViewController,UICollectionViewDataSource,UIColle
         self.view.addSubview(self.mapListView)
     }
     
+    /// 加载地图列表
+    private func loadMaps() {
+        DispatchQueue.global().async {
+            self.modelArr = MapManager.share.loadMap() ?? nil
+            DispatchQueue.main.async {
+                self.mapListView.reloadData()
+            }
+        }
+    }
+    
     @objc func back() {
         self.dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return modelArr?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapListViewCell", for: indexPath)
+        let cell : MapListViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapListViewCell", for: indexPath) as! MapListViewCell
+        cell.model = modelArr?[indexPath.row]
         return cell
     }
     

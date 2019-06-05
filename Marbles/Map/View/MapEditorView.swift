@@ -23,6 +23,12 @@ class MapEditorView: UIView {
     private var blockSize = CGSize(width: 0, height: 0)
     /// 砖块的范围
     private var blockArea = CGRect(x: 0, y: 0, width: 0, height: 0)
+    /// 是否显示网格
+    var showGrid = true {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     /// 数据源
     var model: MapModel = MapModel()
     /// 准备布局方法
@@ -36,7 +42,7 @@ class MapEditorView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.white
     }
     
     convenience init(rowNum: NSInteger, colNum: NSInteger, height: CGFloat, frame: CGRect) {
@@ -115,10 +121,12 @@ class MapEditorView: UIView {
                         block.stroke()
                     default:
                         // 没有砖块
-                        let block = UIBezierPath(rect: CGRect(origin: CGPoint(x: CGFloat(col) * self.blockSize.width, y: CGFloat(row) * self.blockSize.height), size: self.blockSize))
-                        block.lineWidth = 1.0
-                        UIColor.gray.setStroke()
-                        block.stroke()
+                        if self.showGrid {
+                            let block = UIBezierPath(rect: CGRect(origin: CGPoint(x: CGFloat(col) * self.blockSize.width, y: CGFloat(row) * self.blockSize.height), size: self.blockSize))
+                            block.lineWidth = 1.0
+                            UIColor.gray.setStroke()
+                            block.stroke()
+                        }
                 }
             }
         }

@@ -58,10 +58,23 @@ class MapEditorViewController: UIViewController, MapEditorMenuDelegate {
     
     func mapEditorMenuSave() {
         let model = mapEditorView.model
-        model.name = editMenuView.titleField.text ?? ""
+        // 添加名称
+        model.name = editMenuView.titleField.text ?? "NEW GAME"
+        // 添加日期
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         model.createDate = dateFormatter.string(from: Date())
+        // 添加截图
+        editMenuView.isHidden = true
+        mapEditorView.showGrid = false
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.width, height: self.view.frame.height), true, 1)
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        let snapImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        model.image = snapImage?.pngData()?.base64EncodedString() ?? ""
+        mapEditorView.showGrid = true
+        editMenuView.isHidden = false
+        // 保存
         DispatchQueue.global().async {
             MapManager.share.saveMap(model: model)
             DispatchQueue.main.async {

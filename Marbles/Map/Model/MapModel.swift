@@ -31,6 +31,8 @@ class MapModel: TableCodable {
     var name = ""
     /// 创建时间
     var createDate = ""
+    /// 截图
+    var image = ""
     /// 高度
     var height:CGFloat = 0.0
     /// 位置状态
@@ -42,6 +44,7 @@ class MapModel: TableCodable {
         case code
         case name
         case createDate
+        case image
         case height
         case infoArr
         
